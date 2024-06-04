@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:19 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 15:46:20 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:53:09 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 # define CAT_HPP
 
 # include <iostream>
+# include "Animal.hpp"
 
-class Cat {
-	private:
-
+class Cat : public Animal{
 	public:
  		// Constructors
 		Cat( void );
 		Cat( const Cat &cat );
 
-  		// Destructor
+		// Destructor
 		~Cat( void );
 
 		// Copy assignment operator
 		Cat & operator = ( const Cat &cat );
 
-		// Getter
-
-		// Setter
-
-  		// Methods
+		// Methods
+		void	makeSound( void ) const;
 };
 
 #endif
