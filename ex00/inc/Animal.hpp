@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 16:56:06 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:00:41 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+
+# define RED "\e[91m"
+# define GREEN "\e[92m"
+# define YELLOW "\e[93m"
+# define INVERT "\e[90m\e[107m"
+# define RESET "\e[0m"
 
 class Animal {
 	protected:
@@ -31,7 +37,7 @@ class Animal {
 		Animal&	operator=( const Animal &animal );
 
 		// Getter
-		virtual std::string	getType( void ) const;
+		std::string	getType( void ) const;
 
 		// Methods
 		virtual void	makeSound( void ) const;
