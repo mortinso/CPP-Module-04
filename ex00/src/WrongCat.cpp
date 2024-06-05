@@ -5,30 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 16:18:28 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 16:18:29 by mortins-         ###   ########.fr       */
+/*   Created: 2024/06/05 14:03:05 by mortins-          #+#    #+#             */
+/*   Updated: 2024/06/05 14:06:07 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/WrongCat.hpp"
 
-WrongCat::WrongCat( void ) {
-	std::cout << "Default constructor called" <<std::endl;
+// Default constructor
+WrongCat::WrongCat( void ){
+	std::cout << "WrongCat default constructor called" <<std::endl;
+	type = "WrongCat";
 }
 
+// Copy constructor
 WrongCat::WrongCat( const WrongCat &wrongcat ) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 	*this = wrongcat;
 }
 
+// Destructor
 WrongCat::~WrongCat( void ) {
-	std::cout << "Destructor called" <<std::endl;
+	std::cout << "WrongCat destructor called" <<std::endl;
 }
 
+// Copy assignment operator overload
 WrongCat& WrongCat::operator = ( const WrongCat &wrongcat ) {
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &wrongcat) {
-		// this->setValue(wrongcat.getValue());
-	}
+	std::cout << "WrongCat copy assignment operator called" << std::endl;
+	if (this != &wrongcat)
+		WrongAnimal::operator=(wrongcat);
 	return (*this);
+}
+
+// -----------------------------------Methods-----------------------------------
+void	WrongCat::makeSound( void ) const {
+	std::cout << "Wrong Meow" << std::endl;
 }

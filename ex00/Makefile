@@ -1,4 +1,4 @@
-NAME = zoo
+NAME = animals
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
@@ -7,8 +7,8 @@ SRC_DIR = src
 INC_DIR = inc
 OBJ_DIR = .obj
 
-SRC_FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp
-INC_FILES = Animal.hpp Cat.hpp Dog.hpp
+SRC_FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+INC_FILES = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 HDRS = $(addprefix $(INC_DIR)/, $(INC_FILES))

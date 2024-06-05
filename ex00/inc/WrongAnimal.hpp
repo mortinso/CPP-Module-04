@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:18:16 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 16:18:18 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:51:52 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@
 # include <iostream>
 
 class WrongAnimal {
-	private:
+	protected:
+		std::string	type;
 
 	public:
  		// Constructors
 		WrongAnimal( void );
-		WrongAnimal( const WrongAnimal &wronganimal );
+		WrongAnimal( const WrongAnimal &wrong_animal );
 
-  		// Destructor
-		~WrongAnimal( void );
+		// Destructor
+		virtual ~WrongAnimal( void );
 
 		// Copy assignment operator
-		WrongAnimal & operator = ( const WrongAnimal &wronganimal );
+		WrongAnimal&	operator=( const WrongAnimal &wrong_animal );
 
 		// Getter
+		virtual std::string	getType( void ) const;
 
-		// Setter
-
-  		// Methods
+		// Methods
+		void	makeSound( void ) const;
 };
 
 #endif

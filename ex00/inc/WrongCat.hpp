@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 16:18:20 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 16:18:22 by mortins-         ###   ########.fr       */
+/*   Created: 2024/06/05 14:02:09 by mortins-          #+#    #+#             */
+/*   Updated: 2024/06/05 14:03:54 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 # define WRONGCAT_HPP
 
 # include <iostream>
+# include "WrongAnimal.hpp"
 
-class WrongCat {
-	private:
-
+class WrongCat : public WrongAnimal {
 	public:
- 		// Constructors
+		// Constructors
 		WrongCat( void );
 		WrongCat( const WrongCat &wrongcat );
 
-  		// Destructor
+		// Destructor
 		~WrongCat( void );
 
-		// Copy assignment operator
+		// Copy assignment operator overload
 		WrongCat & operator = ( const WrongCat &wrongcat );
 
-		// Getter
-
-		// Setter
-
-  		// Methods
+		// Methods
+		void	makeSound( void ) const;
 };
 
 #endif
