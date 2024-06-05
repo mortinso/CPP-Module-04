@@ -1,39 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:46:22 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:03:10 by mortins-         ###   ########.fr       */
+/*   Created: 2024/06/05 15:12:27 by mortins-          #+#    #+#             */
+/*   Updated: 2024/06/05 15:12:30 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
 
-class Dog : public Animal {
+# define RED "\e[91m"
+# define GREEN "\e[92m"
+# define YELLOW "\e[93m"
+# define BLUE "\e[94m"
+# define PURPLE "\e[95m"
+# define CYAN "\e[96m"
+# define INVERT "\e[90m\e[107m"
+# define RESET "\e[0m"
+
+class Brain {
 	private:
-		Brain*	brain;
+		std::string	ideas[100];
 
 	public:
 		// Constructors
-		Dog( void );
-		Dog( const Dog &dog );
+		Brain( void );
+		Brain( const Brain &brain );
 
 		// Destructor
-		~Dog( void );
+		~Brain( void );
 
-		// Copy assignment operator
-		Dog & operator = ( const Dog &dog );
+		// Copy assignment operator overload
+		Brain & operator = ( const Brain &brain );
+
+		// Getters
+
+		// Setters
 
 		// Methods
-		virtual void	makeSound( void ) const;
 };
 
 #endif
