@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:12:27 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:12:30 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:58:50 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 
 class Brain {
 	private:
-		std::string	ideas[100];
+		std::string		ideas[100];
+		unsigned int	last_idea;
 
 	public:
 		// Constructors
@@ -39,11 +40,9 @@ class Brain {
 		// Copy assignment operator overload
 		Brain & operator = ( const Brain &brain );
 
-		// Getters
-
-		// Setters
-
 		// Methods
+		void	showIdeas( void );
+		void	addIdea( const std::string idea );
 };
 
 #endif

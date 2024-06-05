@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:41:28 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:03:58 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,19 @@ int main() {
 	}
 	std::cout << std::endl << std::endl;
 	{
+		std::cout << INVERT << "Ideas overlap:" << RESET << std::endl;
+		const Animal* cat = new Cat();
+
+		for (int i = 0; i < 100; i++)
+			cat->newIdea("Eureka!");
+		cat->shareIdeas();
+		std::cout << "More ideas!" << std::endl;
+		for (int i = 0; i < 3; i++)
+			cat->newIdea("New Eureka!");
+		cat->shareIdeas();
+		delete cat;
 	}
+	// test animal brain
+	// check if deep copy
+	// add more tests
 }

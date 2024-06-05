@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:34 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:08:49 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:01:56 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Dog::Dog( const Dog &dog ) {
 
 // Destructor
 Dog::~Dog( void ) {
-	delete brain;
 	std::cout << "Dog destructor called" <<std::endl;
+	delete brain;
 }
 
 // Copy assignment operator overload
@@ -46,4 +46,12 @@ Dog& Dog::operator = ( const Dog &dog ) {
 // -----------------------------------Methods-----------------------------------
 void	Dog::makeSound( void ) const {
 	std::cout << "Bark" << std::endl;
+}
+
+void	Dog::newIdea( const std::string& idea ) const {
+	brain->addIdea(idea);
+}
+
+void	Dog::shareIdeas( void ) const {
+	brain->showIdeas();
 }

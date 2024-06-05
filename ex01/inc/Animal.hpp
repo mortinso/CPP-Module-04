@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 14:00:41 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:45:58 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ class Animal {
 
 		// Methods
 		virtual void	makeSound( void ) const;
+		virtual void	newIdea( const std::string& idea ) const;
+		virtual void	shareIdeas( void ) const;
 };
 
 #endif

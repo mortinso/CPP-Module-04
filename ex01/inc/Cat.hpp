@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:19 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:03:13 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:46:49 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal{
+class Cat : public Animal {
 	private:
 		Brain*	brain;
 
@@ -34,6 +34,8 @@ class Cat : public Animal{
 
 		// Methods
 		void	makeSound( void ) const;
+		void	newIdea( const std::string& idea ) const;
+		void	shareIdeas( void ) const;
 };
 
 #endif

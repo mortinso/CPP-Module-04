@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:30 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 15:07:41 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:57:28 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Cat::Cat( const Cat &cat ) {
 
 // Destructor
 Cat::~Cat( void ) {
-	delete brain;
 	std::cout << "Cat destructor called" <<std::endl;
+	delete brain;
 }
 
 // Copy assignment operator overload
@@ -46,4 +46,12 @@ Cat& Cat::operator = ( const Cat &cat ) {
 // -----------------------------------Methods-----------------------------------
 void	Cat::makeSound( void ) const {
 	std::cout << "Meow" << std::endl;
+}
+
+void	Cat::newIdea( const std::string& idea ) const {
+	brain->addIdea(idea);
+}
+
+void	Cat::shareIdeas( void ) const {
+	brain->showIdeas();
 }
