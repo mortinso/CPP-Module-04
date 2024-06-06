@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:30 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:51:41 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:04:53 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Cat::Cat( void ) : Animal() {
 // Copy constructor
 Cat::Cat( const Cat &cat ) : Animal( cat ) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	std::cout << RED << "Not sure if this is deep copy" << RESET << std::endl;
 	brain = new Brain(*cat.brain);
 }
 
@@ -36,7 +35,7 @@ Cat& Cat::operator = ( const Cat &cat ) {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	if (this != &cat)
 	{
-		Animal::operator=(cat);
+		type = cat.type;
 		delete brain;
 		brain = new Brain(*cat.brain);
 	}

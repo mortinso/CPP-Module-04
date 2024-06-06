@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 15:10:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:02:24 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,26 @@ int main() {
 		for (int i = 0; i < size; i++)
 			delete animals[i];
 	}
-	std::cout << std::endl << std::endl;
-	
 	{	// Test that ideas are overwritten when the brain is full
-		std::cout << INVERT << "Ideas overwrite:" << RESET << std::endl;
+		std::cout << std::endl << std::endl << INVERT << "Ideas overwrite:" << RESET << std::endl;
 		const Animal* cat = new Cat();
 
 		// Add 100 ideas to cat
 		for (int i = 0; i < 100; i++)
 			cat->newIdea("Eureka!");
 		cat->shareIdeas();
-		
+
 		std::cout << std::endl;
 		// Add 3 extra ideas to cat to check that it doesn't segfault
 		for (int i = 0; i < 3; i++)
 			cat->newIdea("New Eureka!");
 		cat->shareIdeas();
-		
+
 		delete cat;
+		std::cout << std::endl << std::endl;
 	}
-	std::cout << std::endl << std::endl;
-	
 	{	// Check that animal has no brain, and therefore can't have ideas
-		std::cout << INVERT << "Animal ideas:" << RESET << std::endl;
+		std::cout << std::endl << std::endl << INVERT << "Animal ideas:" << RESET << std::endl;
 		const Animal* animal = new Animal();
 
 		animal->newIdea("Eureka!");
@@ -67,7 +64,28 @@ int main() {
 
 		delete animal;
 	}
-	
-	// check if deep copy
-	// add more tests
+	{	// Check if making deep copies
+		std::cout << std::endl << std::endl << INVERT << "Deep copy:" << RESET << std::endl;
+		Dog dog;
+
+		// Add ideas to dog
+		for (int i = 0; i < 3; i++)
+			dog.newIdea("Treats");
+
+		{	// Copy assignment operator clone
+			std::cout << std::endl << "\e[1;4;97mCopy assignment operator:" << RESET << std::endl;
+			Dog clone;
+			clone = dog;
+			clone.shareIdeas();
+		}
+		{	// Copy constructor clone
+			std::cout << std::endl << "\e[1;4;97mCopy constructor:" << RESET << std::endl;
+			Dog clone(dog);
+			clone.shareIdeas();
+		}
+
+		std::cout << std::endl << "\e[1;4;97mBase brain:" << RESET << std::endl;
+		dog.shareIdeas();
+	}
+	return 0;
 }

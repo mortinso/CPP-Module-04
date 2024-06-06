@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:12:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 15:08:50 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 18:05:48 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ Brain::~Brain( void ) {
 Brain& Brain::operator = ( const Brain &brain ) {
 	std::cout << "Brain copy assignment operator called" << std::endl;
 	if (this != &brain)
-		*ideas = *brain.ideas;
+	{
+		for (int i = 0; i < 100; i++)
+			ideas[i] = brain.ideas[i];
+		last_idea = brain.last_idea;
+	}
 	return (*this);
 }
 
