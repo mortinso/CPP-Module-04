@@ -6,23 +6,21 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:12:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 17:01:32 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:08:50 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Brain.hpp"
 
 // Default constructor
-Brain::Brain( void ) {
+Brain::Brain( void ) : last_idea(0) {
 	std::cout << "Brain default constructor called" <<std::endl;
-	last_idea = 0;
 }
 
 // Copy constructor
-Brain::Brain( const Brain &brain ) {
+Brain::Brain( const Brain &brain ) : last_idea(0) {
 	std::cout << "Brain copy constructor called" << std::endl;
 	*this = brain;
-	last_idea = 0;
 }
 
 // Destructor
@@ -34,7 +32,7 @@ Brain::~Brain( void ) {
 Brain& Brain::operator = ( const Brain &brain ) {
 	std::cout << "Brain copy assignment operator called" << std::endl;
 	if (this != &brain)
-		*this = brain;
+		*ideas = *brain.ideas;
 	return (*this);
 }
 

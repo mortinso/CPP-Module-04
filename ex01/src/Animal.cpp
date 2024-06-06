@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:26 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 16:50:06 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:35:07 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	Animal::newIdea( const std::string& idea ) const {
 }
 
 void	Animal::shareIdeas( void ) const {
-	std::cout << "Basic animal has no ideas" << std::endl;
+	std::cout << "Basic animal has no brain to share ideas from" << std::endl;
 }

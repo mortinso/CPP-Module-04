@@ -6,30 +6,29 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:30 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 16:57:28 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:51:41 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
 // Default constructor
-Cat::Cat( void ){
+Cat::Cat( void ) : Animal() {
 	std::cout << "Cat default constructor called" <<std::endl;
 	brain = new Brain();
-	type = "Cat";
 }
 
 // Copy constructor
-Cat::Cat( const Cat &cat ) {
+Cat::Cat( const Cat &cat ) : Animal( cat ) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	std::cout << RED << "Not sure if this is deep copy" << RESET << std::endl;
-	*this = cat;
+	brain = new Brain(*cat.brain);
 }
 
 // Destructor
 Cat::~Cat( void ) {
-	std::cout << "Cat destructor called" <<std::endl;
 	delete brain;
+	std::cout << "Cat destructor called" <<std::endl;
 }
 
 // Copy assignment operator overload
@@ -37,8 +36,9 @@ Cat& Cat::operator = ( const Cat &cat ) {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	if (this != &cat)
 	{
-		type = cat.type;
-		*brain = *cat.brain;
+		Animal::operator=(cat);
+		delete brain;
+		brain = new Brain(*cat.brain);
 	}
 	return (*this);
 }
