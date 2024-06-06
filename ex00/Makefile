@@ -1,7 +1,7 @@
 NAME = animals
 
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CXXFLAGS = -Wall -Werror -Wextra -g -std=c++98 #-fsanitize=address
 
 SRC_DIR = src
 INC_DIR = inc

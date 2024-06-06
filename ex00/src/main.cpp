@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 14:08:06 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:16:40 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,27 @@ int main() {
 		std::cout << INVERT << "Suject tests:" << RESET << std::endl;
 		const Animal* animal = new Animal();
 		const Animal* cat = new Cat();
+		Animal* newcat = new Cat();
 		const Animal* dog = new Dog();
 
+		*newcat = *cat;
 		std::cout << std::endl;
 		std::cout << cat->getType() << " " << std::endl;
+		std::cout << newcat->getType() << " " << std::endl;
 		std::cout << dog->getType() << " " << std::endl << std::endl;
 
+		newcat->makeSound(); //will output the cat sound!
 		cat->makeSound(); //will output the cat sound!
 		dog->makeSound(); //will output the dog sound!
 		animal->makeSound(); //will output the animal sound!
 		std::cout << std::endl;
 
 		delete dog;
+		delete newcat;
 		delete cat;
 		delete animal;
 	}
+	
 	std::cout << std::endl << std::endl;
 	{
 		std::cout << INVERT << "Test with WrongCat:" << RESET << std::endl;

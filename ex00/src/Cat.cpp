@@ -6,22 +6,21 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:30 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 17:02:04 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:06:36 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
 // Default constructor
-Cat::Cat( void ){
+Cat::Cat( void ) : Animal() {
 	std::cout << "Cat default constructor called" <<std::endl;
 	type = "Cat";
 }
 
 // Copy constructor
-Cat::Cat( const Cat &cat ) {
+Cat::Cat( const Cat &cat ) : Animal( cat ) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = cat;
 }
 
 // Destructor

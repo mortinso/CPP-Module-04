@@ -6,22 +6,21 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:03:05 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/05 14:06:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:08:13 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/WrongCat.hpp"
 
 // Default constructor
-WrongCat::WrongCat( void ){
+WrongCat::WrongCat( void ) : WrongAnimal() {
 	std::cout << "WrongCat default constructor called" <<std::endl;
 	type = "WrongCat";
 }
 
 // Copy constructor
-WrongCat::WrongCat( const WrongCat &wrongcat ) {
+WrongCat::WrongCat( const WrongCat &wrongcat ) : WrongAnimal( wrongcat ) {
 	std::cout << "WrongCat copy constructor called" << std::endl;
-	*this = wrongcat;
 }
 
 // Destructor
