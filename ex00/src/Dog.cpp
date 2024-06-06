@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:34 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:07:11 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:57:21 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Dog::~Dog( void ) {
 Dog& Dog::operator = ( const Dog &dog ) {
 	std::cout << "Dog copy assignment operator called" << std::endl;
 	if (this != &dog)
-		Animal::operator=(dog);
+		type = dog.type;
 	return (*this);
 }
 

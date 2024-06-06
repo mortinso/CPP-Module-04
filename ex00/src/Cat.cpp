@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:30 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:06:36 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:57:28 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Cat::~Cat( void ) {
 Cat& Cat::operator = ( const Cat &cat ) {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	if (this != &cat)
-		Animal::operator=(cat);
+		type = cat.type;
 	return (*this);
 }
 
