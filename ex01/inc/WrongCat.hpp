@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 15:46:22 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/07 13:14:32 by mortins-         ###   ########.fr       */
+/*   Created: 2024/06/05 14:02:09 by mortins-          #+#    #+#             */
+/*   Updated: 2024/06/05 14:03:54 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "WrongAnimal.hpp"
 
-class Dog : public Animal {
-	private:
-		Brain*	brain;
-
+class WrongCat : public WrongAnimal {
 	public:
 		// Constructors
-		Dog( void );
-		Dog( const Dog &dog );
+		WrongCat( void );
+		WrongCat( const WrongCat &wrongcat );
 
 		// Destructor
-		~Dog( void );
+		~WrongCat( void );
 
-		// Copy assignment operator
-		Dog & operator = ( const Dog &dog );
+		// Copy assignment operator overload
+		WrongCat & operator = ( const WrongCat &wrongcat );
 
 		// Methods
 		void	makeSound( void ) const;
-		void	newIdea( const std::string& idea ) const;
-		void	shareIdeas( void ) const;
 };
 
 #endif
