@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:26 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 14:35:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:11:02 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,4 @@ std::string	Animal::getType( void ) const {
 // -----------------------------------Methods-----------------------------------
 void	Animal::makeSound( void ) const {
 	std::cout << "Animal sounds" << std::endl;
-}
-
-void	Animal::newIdea( const std::string& idea ) const {
-	std::cout << "Basic animal has no brain. Can't add idea: \"" << idea << "\"" << std::endl;
-}
-
-void	Animal::shareIdeas( void ) const {
-	std::cout << "Basic animal has no brain to share ideas from" << std::endl;
 }
