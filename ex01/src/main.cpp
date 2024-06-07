@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/07 14:56:04 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:19:16 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@
 #include "../inc/WrongCat.hpp"
 
 int main() {
+	{	// Check that animal class still works
+		std::cout << INVERT << "Animal test:" << RESET << std::endl;
+		Animal animal;
+		std::cout << "animal type: " << animal.getType() << std::endl;
+		animal.makeSound();
+	}
 	{	/* Test an array of animals to check that the right constructors/destructors are called
 		Also used to check proper construction/destruction chaining */
-		std::cout << INVERT << "Animal array test:" << RESET << std::endl;
+		std::cout << std::endl << std::endl << INVERT << "Animal array test:" << RESET << std::endl;
 		const Animal*	animals[6];
 
 		// Add half dogs and half cats to the animals array
