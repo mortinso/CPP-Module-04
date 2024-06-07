@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:22 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/04 17:04:12 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:03:25 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Dog : public Animal {
 	public:
- 		// Constructors
+		// Constructors
 		Dog( void );
 		Dog( const Dog &dog );
 
@@ -29,7 +29,7 @@ class Dog : public Animal {
 		Dog & operator = ( const Dog &dog );
 
 		// Methods
-		virtual void	makeSound( void ) const;
+		void	makeSound( void ) const;
 };
 
 #endif
