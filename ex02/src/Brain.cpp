@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:12:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/06 18:05:48 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:19:18 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Brain::Brain( void ) : last_idea(0) {
 }
 
 // Copy constructor
-Brain::Brain( const Brain &brain ) : last_idea(0) {
+Brain::Brain( const Brain &brain ) {
 	std::cout << "Brain copy constructor called" << std::endl;
 	*this = brain;
 }
