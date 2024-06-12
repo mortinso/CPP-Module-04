@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/07 16:19:16 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:13:55 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main() {
 		std::cout << std::endl;
 		// Add 3 extra ideas to cat to check that it doesn't segfault
 		for (int i = 0; i < 3; i++)
-			cat.newIdea("New Eureka!");
+			cat.newIdea("New Idea!");
 		cat.shareIdeas();
 	}
 	{	// Check if making deep copies
@@ -126,6 +126,7 @@ int main() {
 		const WrongAnimal* wrong_cat = new WrongCat();
 		if (!wrong_cat)
 		{
+			delete wrong_animal;
 			std::cout << "wrong_cat creation failed" << std::endl;
 			return 1;
 		}
@@ -134,8 +135,8 @@ int main() {
 		std::cout << "wrong_animal type: " << wrong_animal->getType() << std::endl;
 		std::cout << "wrong_cat type: " << wrong_cat->getType() << std::endl << std::endl;
 
-		wrong_cat->makeSound(); //will output the WrongAnimal sound
 		wrong_animal->makeSound(); //will output the WrongAnimal sound
+		wrong_cat->makeSound(); //will output the WrongAnimal sound
 		std::cout << std::endl;
 
 		delete wrong_cat;

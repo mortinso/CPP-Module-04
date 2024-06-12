@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:12:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/07 15:19:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:13:34 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ Brain& Brain::operator = ( const Brain &brain ) {
 // -----------------------------------Methods-----------------------------------
 // Function that adds a new idea to the ideas array
 void	Brain::addIdea( const std::string idea) {
+	if (!idea[0])
+	{
+		std::cout << RED << "Idea must not be empty" << RESET << std::endl;
+		return ;
+	}
 	if ( last_idea == 100)
 		last_idea = 0;
 	ideas[last_idea] = idea;
