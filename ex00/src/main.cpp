@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/12 13:24:34 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:33:05 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,23 +61,26 @@ int main() {
 			std::cout << "wrong_animal creation failed" << std::endl;
 			return 1;
 		}
-		const WrongAnimal* wrong_cat = new WrongCat();
-		if (!wrong_cat)
+		const WrongAnimal* wrong_catptr = new WrongCat();
+		if (!wrong_catptr)
 		{
-			std::cout << "wrong_cat creation failed" << std::endl;
+			std::cout << "wrong_catptr creation failed" << std::endl;
 			delete wrong_animal;
 			return 1;
 		}
+		WrongCat wrong_cat;
 
 		std::cout << std::endl;
 		std::cout << "wrong_animal type: " << wrong_animal->getType() << std::endl;
-		std::cout << "wrong_cat type: " << wrong_cat->getType() << std::endl << std::endl;
+		std::cout << "wrong_catptr type: " << wrong_catptr->getType() << std::endl;
+		std::cout << "wrong_cat type: " << wrong_cat.getType() << std::endl << std::endl;
 
 		wrong_animal->makeSound(); //will output the WrongAnimal sound
-		wrong_cat->makeSound(); //will output the WrongAnimal sound
+		wrong_catptr->makeSound(); //will output the WrongAnimal sound
+		wrong_cat.makeSound(); //will output the WrongCat sound
 		std::cout << std::endl;
 
-		delete wrong_cat;
+		delete wrong_catptr;
 		delete wrong_animal;
 	}
 }
