@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/12 13:01:03 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:24:34 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int main() {
 		if (!wrong_cat)
 		{
 			std::cout << "wrong_cat creation failed" << std::endl;
+			delete wrong_animal;
 			return 1;
 		}
 

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/12 13:13:55 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:24:21 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main() {
 				animals[i] = new Dog();
 				if (!animals[i])
 				{
-					std::cout << "dog creation failed" << std::endl;
+					std::cout << "Dog creation failed" << std::endl;
 					while (i > 0)
 						delete animals[--i];
 					return 1;
@@ -48,7 +48,7 @@ int main() {
 				animals[i] = new Cat();
 				if (!animals[i])
 				{
-					std::cout << "cat creation failed" << std::endl;
+					std::cout << "Cat creation failed" << std::endl;
 					while (i > 0)
 						delete animals[--i];
 					return 1;
@@ -126,8 +126,8 @@ int main() {
 		const WrongAnimal* wrong_cat = new WrongCat();
 		if (!wrong_cat)
 		{
-			delete wrong_animal;
 			std::cout << "wrong_cat creation failed" << std::endl;
+			delete wrong_animal;
 			return 1;
 		}
 

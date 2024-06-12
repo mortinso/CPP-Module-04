@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 15:46:56 by mortins-          #+#    #+#             */
-/*   Updated: 2024/06/07 16:36:29 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:25:19 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main() {
 				aanimals[i] = new Dog();
 				if (!aanimals[i])
 				{
-					std::cout << "dog creation failed" << std::endl;
+					std::cout << "Dog creation failed" << std::endl;
 					while (i > 0)
 						delete aanimals[--i];
 					return 1;
@@ -42,7 +42,7 @@ int main() {
 				aanimals[i] = new Cat();
 				if (!aanimals[i])
 				{
-					std::cout << "cat creation failed" << std::endl;
+					std::cout << "Cat creation failed" << std::endl;
 					while (i > 0)
 						delete aanimals[--i];
 					return 1;
@@ -62,21 +62,18 @@ int main() {
 	}
 	{	// Test that the program doesn't crash when you add more than 100 ideas
 		std::cout << std::endl << std::endl << INVERT << "Ideas overwrite:" << RESET << std::endl;
-		const AAnimal* cat = new Cat();
+		Cat cat;
 
 		// Add 100 ideas to cat
 		for (int i = 0; i < 100; i++)
-			cat->newIdea("Eureka!");
-		cat->shareIdeas();
+			cat.newIdea("Eureka!");
+		cat.shareIdeas();
 
 		std::cout << std::endl;
 		// Add 3 extra ideas to cat to check that it doesn't segfault
 		for (int i = 0; i < 3; i++)
-			cat->newIdea("New Eureka!");
-		cat->shareIdeas();
-
-		delete cat;
-		std::cout << std::endl << std::endl;
+			cat.newIdea("New Idea!");
+		cat.shareIdeas();
 	}
 	{	// Check if making deep copies
 		std::cout << std::endl << std::endl << INVERT << "Deep copy:" << RESET << std::endl;
@@ -124,6 +121,7 @@ int main() {
 		if (!wrong_cat)
 		{
 			std::cout << "wrong_cat creation failed" << std::endl;
+			delete wrong_animal;
 			return 1;
 		}
 
@@ -131,16 +129,16 @@ int main() {
 		std::cout << "wrong_animal type: " << wrong_animal->getType() << std::endl;
 		std::cout << "wrong_cat type: " << wrong_cat->getType() << std::endl << std::endl;
 
-		wrong_cat->makeSound(); //will output the WrongAnimal sound
 		wrong_animal->makeSound(); //will output the WrongAnimal sound
+		wrong_cat->makeSound(); //will output the WrongAnimal sound
 		std::cout << std::endl;
 
 		delete wrong_cat;
 		delete wrong_animal;
 	}
 	/* {	// Try to instantiate Animal Class and see that it errors
-		AAnimal		basic(); // error: invalid abstract return type 'AAnimal'
-		AAnimal*	p_basic = new AAnimal(); // error: invalid new-expression of abstract class type
+		AAnimal		animal(); // error: invalid abstract return type 'AAnimal'
+		AAnimal*	animalptr = new AAnimal(); // error: invalid new-expression of abstract class type
 	} */
 	return 0;
 }
