@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mortins- <mortins-@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/30 11:45:34 by mortins-          #+#    #+#             */
+/*   Updated: 2024/10/30 11:45:37 by mortins-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
@@ -19,10 +31,14 @@
 class Character : public ICharacter {
 	private:
 		std::string	name;
+		AMateria	*backpack[4];
+		AMateria	*dump[10];
+
+		Character( void );
 
 	public:
 		// Constructors
-		Character( void );
+		Character( std::string name );
 		Character( const Character &_character );
 
 		// Destructor
@@ -32,7 +48,7 @@ class Character : public ICharacter {
 		Character &operator = ( const Character &_character );
 
 		// Getters
-		virtual const std::string & getName();
+		virtual const std::string&	getName( void ) const;
 
 		// Methods
 		virtual void	equip( AMateria* m );

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 07:48:58 by mortins-          #+#    #+#             */
-/*   Updated: 2024/10/30 09:06:26 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:40:07 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define INVERT "\e[90m\e[107m"
 # define RESET "\e[0m"
 
+class ICharacter;
+
 class AMateria {
 	private:
 		std::string type;
@@ -39,7 +41,7 @@ class AMateria {
 		AMateria( const AMateria &_amateria );
 
 		// Destructor
-		~AMateria( void );
+		virtual ~AMateria( void );
 
 		// Operator overloads
 		AMateria &operator = ( const AMateria &_amateria );

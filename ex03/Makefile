@@ -7,8 +7,8 @@ SRC_DIR = src
 INC_DIR = inc
 OBJ_DIR = .obj
 
-SRC_FILES = main.cpp AMateria.cpp Ice.cpp Cure.cpp
-INC_FILES = ICharacter.hpp IMateriaSource.hpp Ice.hpp Cure.hpp AMateriaSource.hpp MateriaSource.hpp Character.hpp
+SRC_FILES = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp #Fire.cpp
+INC_FILES = ICharacter.hpp IMateriaSource.hpp Ice.hpp Cure.hpp AMateria.hpp MateriaSource.hpp Character.hpp #Fire.hpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 HDRS = $(addprefix $(INC_DIR)/, $(INC_FILES))
