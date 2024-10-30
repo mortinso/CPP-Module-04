@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 07:48:58 by mortins-          #+#    #+#             */
-/*   Updated: 2024/10/30 10:40:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:34:00 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 class ICharacter;
 
 class AMateria {
-	private:
+	protected:
 		std::string type;
 
 	public:

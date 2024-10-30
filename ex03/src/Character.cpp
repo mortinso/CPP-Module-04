@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:45:58 by mortins-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:46:00 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:43:17 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	Character::unequip( int idx ) {
 	else {
 		for (int i = 0; i < 10; i++) {
 			if (dump[i] == NULL) {
-				std::cout << name << "[" << i << "] unequipped " << backpack[i]->getType() << std::endl;
+				std::cout << name << "[" << idx << "] unequipped " << backpack[idx]->getType() << std::endl;
 				dump[i] = backpack[idx];
 				backpack[idx] = NULL;
 				return;
